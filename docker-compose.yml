@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+  portfolio-db:
+    image: postgres:10-alpine
+    container_name: portfolio-db
+    entrypoint: docker-entrypoint.sh -c 'shared_buffers=384MB' -c 'max_connections=400'
+    ports:
+    - "127.0.0.1:5432:5432"
+    volumes:
+    - ./pgdata/:/var/lib/postgresql/data
+    env_file:
+      - postgres.env
