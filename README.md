@@ -15,6 +15,8 @@
 Now when you have your `.env` file you can run you postgres db `docker-compose up -d postgres`,
 
 Or you can use shortcuts:
- - `pipenv run postgres` - run container with DB
+ - `pipenv run db` - run container with DB
 
-
+## Install pre-commit hooks 
+1. `pip install -r requirements-dev.txt`
+2. `pre-commit install`

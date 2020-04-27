@@ -11,9 +11,11 @@ djangorestframework = "*"
 psycopg2-binary = "*"
 dj-database-url = "*"
 djangorestframework-simplejwt = "*"
+django-extensions = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.8"
 
 [scripts]
-postgres = "docker-compose up -d portfolio-db"
+db = "docker-compose up -d portfolio-db"

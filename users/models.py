@@ -1,11 +1,14 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-# Create your models here.
+from .roles import Roles
 
 
 class User(AbstractUser):
-    nickname = models.CharField(max_length=50)
+    date_of_birthday = models.DateTimeField(null=True, blank=True)
+    role = models.CharField(
+        choices=Roles.choices(), default=Roles.AUTHOR.name, max_length=20
+    )
 
     class Meta:
-        db_table = 'users'
+        db_table = "users"
